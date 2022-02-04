@@ -6,8 +6,9 @@ import java.io.*;
 public class Notepad extends JFrame implements ActionListener {
 
     JMenuBar menuBar = new JMenuBar();
-
     ImageIcon image = new ImageIcon("Notepad.png");
+    JTextArea textArea = new JTextArea();
+    JScrollPane scrollPane = new JScrollPane(textArea);
 
     JMenu fileMenu = new JMenu("File");
     JMenu editMenu = new JMenu("Edit");
@@ -51,9 +52,9 @@ public class Notepad extends JFrame implements ActionListener {
     Notepad() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500, 500);
         this.setTitle("Untitled - Notepad");
-        this.setLayout(new FlowLayout());
+        this.setSize(1000, 700);
+        this.add(scrollPane);
         this.setIconImage(image.getImage());
 
         newItem.addActionListener(this);
@@ -70,6 +71,8 @@ public class Notepad extends JFrame implements ActionListener {
         formatMenu.setMnemonic(KeyEvent.VK_F);
         viewMenu.setMnemonic(KeyEvent.VK_V);
         helpMenu.setMnemonic(KeyEvent.VK_H);
+
+        textArea.setFont(new Font("Font Name", Font.PLAIN, 18));
 
         fileMenu.add(newItem);
         fileMenu.add(newWindowItem);
