@@ -52,7 +52,7 @@ public class Notepad extends JFrame implements ActionListener {
     Notepad() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Untitled - Notepad");
+        this.setTitle("Notepad");
         this.setSize(1000, 700);
         this.add(scrollPane);
         this.setIconImage(image.getImage());
